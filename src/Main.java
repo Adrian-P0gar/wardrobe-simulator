@@ -10,15 +10,15 @@ public class Main {
         System.out.println(skirt1);
         System.out.println(blouse1);
 
-        Hanger hanger1 = new Simple(1);
-        Hanger hanger2 = new Complex(2);
+        Hanger hanger1 = new Simple();
+        Hanger hanger2 = new Complex();
 
         hanger1.addClothes(jeans);
         hanger1.addClothes(blouse1);
 
-        hanger2.addClothes(blouse1);
+//        hanger2.addClothes(blouse1);
         hanger2.addClothes(skirt1);
-//        hanger2.addClothes(jeans);
+        hanger2.addClothes(jeans);
 
         System.out.println(hanger1);
         System.out.println(hanger2);

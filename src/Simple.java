@@ -1,6 +1,6 @@
 public class Simple extends  Hanger{
-    public Simple(int dimension) {
-        super(dimension );
+    public Simple() {
+        super(1);
     }
 
     @Override

@@ -1,8 +1,8 @@
 public class Complex extends Hanger{
 
 
-    public Complex(int dimension) {
-        super(dimension);
+    public Complex() {
+        super(2);
     }
 
 
@@ -28,30 +28,27 @@ public class Complex extends Hanger{
 
     @Override
     public boolean verifyIfIsEmpty(TypeOfClothes type) {
-        int spaceOnHanger = 0;
+
         if(clothes.size() >= dimension){
             System.out.println("Not enough space in complex wardrobe");
             return false;
         }
-        else {
-            for (Clothes clothe : clothes) {
-                if(type.equals(TypeOfClothes.SKIRT) || type.equals(TypeOfClothes.TROUSERS) ){
-                    if (clothe.type.equals(TypeOfClothes.SKIRT) || clothe.type.equals(TypeOfClothes.TROUSERS)) {
-                        spaceOnHanger++;
-                        System.out.println( "You don't have space for this type!");
-                    }
-                }
-                if(type.equals(TypeOfClothes.SHIRT) || type.equals(TypeOfClothes.BLOUSE) ){
-                    if (clothe.type.equals(TypeOfClothes.SHIRT) || clothe.type.equals(TypeOfClothes.BLOUSE)) {
-                        spaceOnHanger++;
-                        System.out.println( "You don't have space for this type!");
-                    }
-                }
-
-            }
-            return spaceOnHanger == 0;
+        if(clothes.size() == 0){
+            System.out.println("Is enough space!");
+            return true;
         }
-    }
+        else{
+            if(type.equals(TypeOfClothes.SKIRT) || type.equals(TypeOfClothes.TROUSERS) ){
+                if (clothes.get(0).type.equals(TypeOfClothes.SKIRT) || clothes.get(0).type.equals(TypeOfClothes.TROUSERS)) {
+                    System.out.println( "You don't have space for this type!");
+                    return false;
+                }}
+            if(type.equals(TypeOfClothes.SHIRT) || type.equals(TypeOfClothes.BLOUSE) ){
+                if (clothes.get(0).type.equals(TypeOfClothes.SHIRT) || clothes.get(0).type.equals(TypeOfClothes.BLOUSE)){
+                    System.out.println( "You don't have space for this type!");
+                      return false;
+                    } }
+            return true;}}
 
 
 
